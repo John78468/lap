@@ -1,0 +1,2 @@
+class CommentJoinComment < ApplicationRecord
+end

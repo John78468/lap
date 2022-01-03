@@ -1,3 +1,8 @@
 class Gossip < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, foreign_key: true
+  has_many :tags
+  has_many :comments
+  has_many :like
+  validates :content, presence :true
+  validates :title, presence :true
 end
