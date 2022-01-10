@@ -6,10 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
 10.times do
-  user = User.create!(first_name: Faker::Name.first_name, email: Faker::Internet.email)
+  city = City.create!(name: Faker::Name.name, zip_code: Faker::Address.zip_code)
 end
 
 10.times do
-  city = City.create!(name: Faker::Name.name, zip_code: Faker::Zip_Code.zip_code)
+  user = User.create!(first_name: Faker::Name.first_name, email: Faker::Internet.email, password: "password", city: City.first )
 end
+
