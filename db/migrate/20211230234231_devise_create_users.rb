@@ -7,6 +7,9 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.1]
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
 
+      #add relation
+      t.belongs_to :city, index: true, foreign_key: true
+
       ## Recoverable
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at

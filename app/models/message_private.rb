@@ -1,3 +1,5 @@
 class MessagePrivate < ApplicationRecord
-  belongs_to :user, foreign_key: true
+  belongs_to :recipient, class_name: "User"
+  belongs_to :sender, class_name: "User"
+
 end
