@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   
-  belongs_to :city, foreign_key :true
+  belongs_to :city, foreign_key: true
   has_many :privates_messages
   has_many :comments
   has_many :gossips
