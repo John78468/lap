@@ -21,6 +21,11 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
+  <div class="field">
+    <%= f.label :city_id %><br />
+    <%= f.collection_select :city_id, City.all, :id, :name %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
