@@ -1,10 +1,23 @@
 
 
 le show gossip
+<%= form_for(@gossip) do |f| %>
 
-<h1><<%= @gossip.title %>> </h1>
-<p> <<%= @gossip.content %> </p>
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
 
-<p>
-  <a href="<%= gossip_path(id) %>" class="btn btn-primary">Retour aux potins</a>
-</p>
+  <div class="field">
+    <%= f.label :content %><br>
+    <%= f.text_area :content %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+  <div class="actions">
+    <a href="<%= new_gossip_path %>" class="btn btn-primary">Créer potin</a>
+  </div>
+<% end %>
